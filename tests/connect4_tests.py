@@ -8,7 +8,7 @@ import numpy as np
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # Now import the Connect4Board class
-from game import Connect4Board  # Adjust based on your actual class name
+from connect4 import Connect4Board  # Adjust based on your actual class name
 
 
 class CustomTestResult(unittest.TextTestResult):
@@ -30,6 +30,7 @@ class CustomTestResult(unittest.TextTestResult):
         test_name = test.id().split('.')[-1]
         self.stream.write(Fore.RED + f"{test_name} : ERROR\n" + Style.RESET_ALL)
 
+
 class CustomTestRunner(unittest.TextTestRunner):
     def _makeResult(self):
         return CustomTestResult(self.stream, self.descriptions, self.verbosity)
@@ -39,6 +40,7 @@ class CustomTestRunner(unittest.TextTestRunner):
         result = self._makeResult()
         test(result)
         return result
+
 
 class TestConnect4Board(unittest.TestCase):
 

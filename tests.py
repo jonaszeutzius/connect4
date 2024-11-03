@@ -1,7 +1,7 @@
 import unittest
 from colorama import Fore, Style
 import numpy as np
-from game import Connect4Board  # Make sure to adjust this import based on your project structure
+from connect4 import Connect4Board  # Make sure to adjust this import based on your project structure
 
 class CustomTestResult(unittest.TextTestResult):
     def addSuccess(self, test):
